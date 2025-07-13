@@ -1,3 +1,4 @@
+// FeaturedCategories.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -31,9 +32,12 @@ const FeaturedCategories = ({ categories = [], onCategoryClick }) => {
 
   return (
     <section className="container py-5">
-      <div className="d-flex justify-content-between align-items-center mb-4">
-        <h2 className="h3 mb-0">Shop by Category</h2>
-        <Link to="/categories" className="btn btn-outline-primary ">
+      <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
+        <h2 className="h3 mb-3 mb-md-0 fw-bold text-gray-800">Shop by Category</h2>
+        <Link 
+          to="/categories" 
+          className="btn btn-outline-primary rounded-pill px-4"
+        >
           View All Categories
         </Link>
       </div>
@@ -41,20 +45,25 @@ const FeaturedCategories = ({ categories = [], onCategoryClick }) => {
         {featuredCategories.map((category) => (
           <div className="col-6 col-md-4 col-lg-3" key={category.id}>
             <div 
-              className="card h-100 border-0 shadow-sm transition-all hover-shadow cursor-pointer"
-              onClick={() => onCategoryClick(category.id)}
+              className="card h-100 border-0 shadow-sm overflow-hidden transition-all hover-shadow cursor-pointer"
+              onClick={() => onCategoryClick?.(category.id)}
             >
-              <div className="position-relative" style={{ height: "150px", overflow: "hidden", cursor:"pointer" }}>
+              <div className="position-relative" style={{ height: "180px", overflow: "hidden" }}>
                 <img
                   src={category.image}
                   className="img-fluid w-100 h-100 object-cover"
                   alt={category.name}
+                  style={{ transition: 'transform 0.3s ease' }}
+                  onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+                  onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
                 />
-                <div className="position-absolute bottom-0 start-0 end-0 p-3 bg-dark bg-opacity-50 text-white">
-                  <h5 className="mb-0">{category.name}</h5>
+                <div className="position-absolute bottom-0 start-0 end-0 p-3 bg-gradient-dark text-white">
+                  <div className="d-flex justify-content-between align-items-center">
+                    <h5 className="mb-0 fw-semibold">{category.name}</h5>
+                    <span className="badge bg-primary rounded-pill">{category.productCount} items</span>
+                  </div>
                 </div>
               </div>
-             
             </div>
           </div>
         ))}

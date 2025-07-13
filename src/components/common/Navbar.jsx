@@ -1,7 +1,5 @@
-
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartProvider";
-
 
 const Navbar = ({
   searchQuery,
@@ -11,54 +9,73 @@ const Navbar = ({
 }) => {
   const { getTotalItems } = useCartContext();
   
+
+  
+  // ...existing code...
+
   return (
-    <header className="bg-white sticky-top">
-      <div className="container-fluid">
+    <header className="bg-white sticky-top shadow-sm">
+      <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light py-3">
-          <Link className="navbar-brand fw-bold fs-3 text-primary" to="/">
+          <Link
+            className="navbar-brand fw-bold fs-3"
+            to="/"
+            style={{ color: "#2563eb" }}
+          >
             <i className="bi bi-shop me-2"></i>ShopHub
           </Link>
 
           <div className="collapse navbar-collapse justify-content-center d-none d-lg-flex">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav gap-4">
               <li className="nav-item">
-                <Link className="nav-link active fw-medium" to="/">
+                <Link
+                  className="nav-link fw-medium"
+                  to="/"
+                  style={{ color: "#2563eb" }}
+                >
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link fw-medium" to="/products">
+                <Link
+                  className="nav-link fw-medium text-gray-600"
+                  to="/products"
+                >
                   Products
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link fw-medium" to="/categories">
+                <Link
+                  className="nav-link fw-medium text-gray-600"
+                  to="/categories"
+                >
                   Categories
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link fw-medium" to="/about">
+                <Link className="nav-link fw-medium text-gray-600" to="/about">
                   About
                 </Link>
               </li>
             </ul>
           </div>
 
-          <div className="d-none d-lg-flex align-items-center gap-3">
+          <div className="d-none d-lg-flex align-items-center gap-4">
             <div className="position-relative">
               <i className="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
               <input
                 type="text"
-                className="form-control ps-5 rounded-pill"
+                className="form-control ps-5 rounded-pill border-0 bg-gray-100"
                 placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                style={{ width: "300px" }}
+                style={{ width: "250px" }}
               />
             </div>
             <Link
               to="/cart"
-              className="btn btn-primary position-relative rounded-pill px-3"
+              className="btn position-relative px-3"
+              style={{ backgroundColor: "#2563eb", color: "white" }}
             >
               <i className="bi bi-cart me-1"></i>
               Cart
@@ -68,6 +85,8 @@ const Navbar = ({
                 </span>
               )}
             </Link>
+
+            {/* ...existing code... */}
           </div>
 
           <button
@@ -124,6 +143,7 @@ const Navbar = ({
                 </span>
               )}
             </Link>
+           
           </div>
         )}
       </div>

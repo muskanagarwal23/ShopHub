@@ -10,7 +10,7 @@ const Footer = () => {
             <h5 className="mb-3">
               <i className="bi bi-shop me-2"></i>ShopHub
             </h5>
-            <p className="text-muted">
+            <p className="text-white">
               Your one-stop shop for all your needs. Quality products at
               affordable prices.
             </p>
@@ -26,59 +26,62 @@ const Footer = () => {
               </a>
             </div>
           </div>
+
           <div className="col-md-2 mb-4">
             <h5 className="mb-3">Shop</h5>
             <ul className="list-unstyled">
               <li className="mb-2">
-                <Link to="/products" className="text-muted text-decoration-none">
+                <Link to="/products" className="text-white text-decoration-none">
                   All Products
                 </Link>
               </li>
               <li className="mb-2">
-                <Link to="/categories" className="text-muted text-decoration-none">
+                <Link to="/categories" className="text-white text-decoration-none">
                   Categories
                 </Link>
               </li>
               <li className="mb-2">
-                <Link to="#" className="text-muted text-decoration-none">
-                  New Arrivals
+                <Link to="/best-sellers" className="text-white text-decoration-none">
+                  Best Sellers
                 </Link>
               </li>
               <li className="mb-2">
-                <Link to="#" className="text-muted text-decoration-none">
-                  Featured
+                <Link to="/about" className="text-white text-decoration-none">
+                  About
                 </Link>
               </li>
             </ul>
           </div>
+
           <div className="col-md-2 mb-4">
             <h5 className="mb-3">Support</h5>
             <ul className="list-unstyled">
               <li className="mb-2">
-                <Link to="#" className="text-muted text-decoration-none">
+                <Link to="/contact" className="text-white text-decoration-none">
                   Contact Us
                 </Link>
               </li>
               <li className="mb-2">
-                <Link to="#" className="text-muted text-decoration-none">
-                  FAQs
+                <Link to="/blog" className="text-white text-decoration-none">
+                  Blog
                 </Link>
               </li>
               <li className="mb-2">
-                <Link to="#" className="text-muted text-decoration-none">
-                  Shipping
+                <Link to="/help" className="text-white text-decoration-none">
+                  Help Center
                 </Link>
               </li>
               <li className="mb-2">
-                <Link to="#" className="text-muted text-decoration-none">
-                  Returns
+                <Link to="/returns" className="text-white text-decoration-none">
+                  Returns and Refund
                 </Link>
               </li>
             </ul>
           </div>
+
           <div className="col-md-4 mb-4">
             <h5 className="mb-3">Newsletter</h5>
-            <p className="text-muted">
+            <p className="text-white">
               Subscribe to get updates on new products and special offers
             </p>
             <div className="input-group mb-3">
@@ -94,7 +97,7 @@ const Footer = () => {
           </div>
         </div>
         <hr className="my-4 bg-secondary" />
-        <div className="text-center text-muted">
+        <div className="text-center text-white">
           <small>
             &copy; {new Date().getFullYear()} ShopHub. All rights reserved.
           </small>

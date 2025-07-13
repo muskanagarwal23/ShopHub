@@ -1,3 +1,4 @@
+// HeroCarousel.jsx
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -45,13 +46,14 @@ const HeroCarousel = () => {
               height: "100%"
             }}
           />
-          <Carousel.Caption className="hero-overlay d-flex flex-column justify-content-center h-100">
+          <Carousel.Caption className="d-flex flex-column justify-content-center h-100 text-start" style={{ left: '10%', right: 'auto', bottom: 'auto', top: '50%', transform: 'translateY(-50%)' }}>
             <div className="container">
-              <h2 className="display-4 fw-bold mb-3">{item.title}</h2>
-              <p className="lead mb-4">{item.description}</p>
+              <h2 className="display-4 fw-bold mb-3" style={{ color: '#1e3a8a' }}>{item.title}</h2>
+              <p className="lead mb-4 text-gray-700">{item.description}</p>
               <Link
                 to={item.buttonLink}
-                className="btn btn-primary btn-lg px-4 rounded-pill"
+                className="btn btn-lg px-5 py-3 rounded-pill fw-bold"
+                style={{ backgroundColor: '#2563eb', color: 'white' }}
               >
                 {item.buttonText}
               </Link>
